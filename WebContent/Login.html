@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<link href="css/table.css" type="text/css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>行動予定表</title>
+<script type="text/javascript">
+function blank_alert() {
+	//入力欄が空白かチェック
+	if(document.form.id.value=="" || document.form.fname.value=="" || document.form.lname.value==""){
+		alert("社員番号、氏名を入力してください");
+		return false;
+	}else{
+		// 「OK」時の処理開始 ＋ 確認ダイアログの表示
+		if(window.confirm('ログインしますか？')){
+			document.getElementById("form").action = 'Signup.jsp'; // Insert.jsp へジャンプ
+			return true;
+		}
+		// 「OK」時の処理終了
+		// 「キャンセル」時の処理開始
+		else{
+			window.alert('キャンセルされました。'); // 警告ダイアログを表示
+			return false;
+		}
+		// 「キャンセル」時の処理終了
+	}
+}
+</script>
+</head>
+<body>
+	<h1>行動予定表</h1>
+	<h3>ログイン画面</h3>
+	<form id="form" name="form" action="Signup.jsp" method="post">
+	<table align="center">
+		<tr>
+		<th>社員番号</th><th>姓</th><th>名</th>
+		</tr>
+		<tr>
+		<td><input type="number" name="id" maxlength="7"  autofocus required autocomplete placeholder="1234567"></td>
+		<td><input type="text" name="fname" maxlength="5" required autocomplete placeholder="武威" style="ime-mode: active;"></td>
+		<td><input type="text" name="lname" maxlength="5" required autocomplete placeholder="アデコ" style="ime-mode: active;"></td>
+<!-- 		<td><input type="text" name="id" maxlength="7" ></td> -->
+<!-- 		<td><input type="text" name="fname" maxlength="5" ></td> -->
+<!-- 		<td><input type="text" name="lname" maxlength="5" ></td> -->
+		</tr>
+	</table>
+	<br><br><br>
+		<input type="submit" class="button1" value="ログイン" onclick="return blank_alert();">
+		<input type="reset"  class="button1" value="リセット">
+		<input type="button" class="button1" value="ユーザ追加" name=btn2 onclick="location.href='Admin.html'">
+	</form>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<link href="css/table.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.numeric.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>行動予定表</title>
+<script type="text/javascript">
+function blankandchk_alert() {
+	var flag = 0;
+	//入力欄が空白かチェック
+	if(document.form.id.value=="" || document.form.fname.value=="" || document.form.lname.value==""){
+		alert("社員番号、氏名を入力してください");
+		return false;
+	}else{
+		// 「OK」時の処理開始 ＋ 確認ダイアログの表示
+		if(window.confirm('登録しますか？')){
+			if(false == chk1() || false == chk2() || false == chk3() || false == chk4()){
+				alert("登録できません。")
+				location.href = 'Admin.html';
+				return false;
+			}else{
+				document.getElementById("form").action = 'Addusersignup.jsp'; // Addusersignup.jsp へジャンプ
+				alert("登録されました。")
+				return true;
+			}
+		}else{
+			window.alert('キャンセルされました。'); // 警告ダイアログを表示
+			return false;
+		}
+	}
+	return true;
+}
+function chk1() {
+	var str1 = $("input[name='fname']").val();
+
+	if(str1.match(/^[a-zA-Z0-9 -/:-@\[-\`\{-\~]+$/)) {
+		alert("半角英数字記号が入力されました。");
+// 		if(str1.match(/[ぁ-んァ-ヶー一-龠]+$/))
+// 		if(str1.match(/[、-◯]/)){
+// 			alert("全角記号が入力されました。");
+// 			return false;
+// 		}
+		return false;
+	} else {
+		return true;
+	}
+}
+function chk2() {
+	var str2 = $("input[name='lname']").val();
+	if(str2.match(/^[a-zA-Z0-9 -/:-@\[-\`\{-\~]+$/)) {
+		alert("半角英数字記号が入力されました。");
+		return false;
+	} else {
+		return true;
+	}
+}
+function chk3() {
+	var str3 = $("input[name='fname']").val();
+	if(str3.match(/^[ぁ-んァ-ヶー一-龠 　\r\n\t]+$/)) {
+		alert("fname : OK。");
+		return true;
+	} else {
+		alert("fname : NG。");
+		return false;
+	}
+}
+function chk4() {
+	var str4 = $("input[name='lname']").val();
+	if(str4.match(/^[ぁ-んァ-ヶー一-龠 　\r\n\t]+$/)) {
+		alert("lname : OK。");
+		return true;
+	} else {
+		alert("lname : NG。");
+		return false;
+	}
+}
+
+</script>
+</head>
+<body>
+	<h1>行動予定表</h1>
+	<h3>ユーザ作成</h3>
+	<form id="form" name="form" action="Addusersignup.jsp" method="post">
+	<table align="center">
+		<tr>
+		<th>社員番号</th><th>姓</th><th>名</th>
+		</tr>
+		<tr>
+		<td><input type="number"name="id" class="positive-integer" maxlength="7" autofocus required autocomplete placeholder="1234567" style="ime-mode: disabled;" ></td>
+		<td><input type="text" name="fname" maxlength="5" required autocomplete placeholder="武威" style="ime-mode: active;"></td>
+		<td><input type="text" name="lname" maxlength="5" required autocomplete placeholder="アデコ" style="ime-mode: active;"></td>
+<!-- 		<td><input type="text" class="positive-integer" name="id" maxlength="7" ></td> -->
+<!-- 		<td><input type="text" name="fname" maxlength="5" ></td> -->
+<!-- 		<td><input type="text" name="lname" maxlength="5" ></td> -->
+		</tr>
+	</table>
+	<br><br>
+		<input type="submit" class="button1" value="ユーザ追加" onclick="return blankandchk_alert()">
+		<input type="button" class="button1" value="ログイン画面" onclick="location.href='Login.html'">
+	</form>
+</body>
+<script>
+$(".positive-integer").numeric({ decimal: false, negative: false },
+		function() {	alert("数値を入力してください。"); this.value = ""; this.focus();
+});
+
+// *「右クリック貼り付け」対応
+$(".antirc").change(function() {
+    $(this).keyup();
+});
+</script>
+</html>
