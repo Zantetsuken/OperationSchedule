@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import=" java.util.List"%>
 <jsp:include page="Checklogin.jsp" />
-<%@ page import="java.text.SimpleDateFormat" %>
+<%-- <%@ page import="java.text.SimpleDateFormat" %> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
@@ -51,13 +51,32 @@ $(document).ready(function() {
 	Employeedao empdao = new Employeedao();
 	List<Employee> emplist = empdao.findall();
 
+	boolean flg = false;
+	//とりあえずTAの名前を列挙
+	String str[] = {"武威　アデコ","赤羽根　大輔","須賀　俊介","板倉　剛一","板倉　剛一","髙尾　昌平","神谷　朋弘","小口　尊士","石黒　友恵","松倉　大樹"};
+	for(int i = 0; i < str.length; i++){
+// 		System.out.println(str[i]);
+		if(str[i].equals(fullname)) {
+// 			System.out.println("ありました");
+			flg  = true;
+			break;
+		}
+	}
 	out.println("<table align='center'>");
-	out.println("<tr align='center'><th>選択</th><th>No</th><th>TAチェック</th><th>日付(開始時間)</th><th>日付(終了時間)</th>"
+	if(flg){
+		out.println("<tr align='center'><th>選択</th><th>No</th><th>TAチェック</th><th>日付(開始時間)</th><th>日付(終了時間)</th>"
 												+ "<th>氏名</th><th>行先</th><th>内容</th><th>直行/直帰</th><th>ステータス</th></tr>");
+	}else{
+		out.println("<tr align='center'><th>No</th><th>TAチェック</th><th>日付(開始時間)</th><th>日付(終了時間)</th>"
+				+ "<th>氏名</th><th>行先</th><th>内容</th><th>直行/直帰</th><th>ステータス</th></tr>");
+	}
+
 	out.println("<tr align='center'>");
 
 	for(Employee emp : emplist){
-		out.println("<td><input type='checkbox' name='check' value='" + emp.getNo() + "'></td>");
+		if(flg){
+			out.println("<td><input type='checkbox' name='check' value='" + emp.getNo() + "'></td>");
+		}
 		out.println("<td>" + emp.getNo() + "</td>");
 		//TAチェック
 		if(emp.getTacheck().equals("未")){
@@ -84,17 +103,6 @@ $(document).ready(function() {
 %>
 <br>
 <%
-	boolean flg = false;
-	//とりあえずTAの名前を列挙
-	String str[] = {"武威　アデコ","赤羽根　大輔","須賀　俊介","板倉　剛一","板倉　剛一","髙尾　昌平","神谷　朋弘","小口　尊士","石黒　友恵","松倉　大樹"};
-	for(int i = 0; i < str.length; i++){
-// 		System.out.println(str[i]);
-		if(str[i].equals(fullname)) {
-// 			System.out.println("ありました");
-			flg  = true;
-			break;
-		}
-	}
 
 	if (flg) { %>
 <!-- 		<input type="button" value="登録(テスト用)" class="button1" onclick="location.href='Scheduleadd.jsp'" /> -->

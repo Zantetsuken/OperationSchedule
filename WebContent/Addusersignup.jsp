@@ -16,11 +16,9 @@
 	request.setCharacterEncoding("UTF-8");
 	//パラメータ取得
 	String id = request.getParameter("id");
-	//	String name = request.getParameter("name");
 	String fname = request.getParameter("fname");
 	String lname = request.getParameter("lname");
 	String fullname = fname + "　" + lname;
-	//	out.println(fullname);
 	//DBAccessのインスタンスを生成する
 	DBAccess db = new DBAccess();
 	try{
@@ -39,10 +37,12 @@
 			}
 		}
 		if(flg){
+			//既に登録されている場合
 			out.println("<h3>既に登録されています。</h3>");
 			out.println("<h3>社員番号：" + id + "</h3>");
 			out.println("<h3>氏名：" + fullname + "</h3>");
 		}else{
+			//まだ登録されていない場合
 			String sqlinsert = "insert into user (id,name) values ('" + id + "', '" + fullname + "')";
 			PreparedStatement pstmtinsert = db.preopen(sqlinsert);
 			int res = pstmtinsert.executeUpdate();
@@ -51,6 +51,7 @@
 			out.println("<h3>氏名：" + fullname + "</h3>");
 		}
 	} catch (SQLException e) {
+		//同じ社員番号で登録しようした場合
 		e.printStackTrace();
 		out.println("<h3>エラーです。</h3>");
 		out.println("<h3>エラーコード：" + e.getErrorCode() + "</h3>");

@@ -4,30 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- <script src="js/jquery.js"></script> -->
-<!-- <script src="js/jquery.datetimepicker.js"></script> -->
-
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script> -->
 <link href="css/table.css" type="text/css" rel="stylesheet" />
 
-<!-- <link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
-<!-- <link rel="stylesheet" media="all" type="text/css" href="jquery-ui-timepicker-addon.css" /> -->
 
-<!-- <script src="js/jquery.js"></script> -->
-<!-- <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script> -->
-<!-- <script src="js/jquery-ui-timepicker-addon.js"></script> -->
-
-
-<!-- Timepicker -->
 <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script>
+<link href="js/query-ui-timepicker-addon.css" rel="stylesheet" media="all" type="text/css"/>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery-ui-timepicker-addon.js"></script>
 <script src="js/jquery-ui-timepicker-ja.js"></script>
 <script src="js/jquery-ui-sliderAccess.js"></script>
+
+<!-- Timepicker -->
+<!-- <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script> -->
+<!-- <script src="js/jquery-ui-timepicker-addon.js"></script> -->
+<!-- <script src="js/jquery-ui-timepicker-ja.js"></script> -->
+<!-- <script src="js/jquery-ui-sliderAccess.js"></script> -->
 <!-- Timepicker -->
 
-<!-- <link rel="stylesheet" type="text/css" href="js/jquery.datetimepicker.css"/> -->
+<link rel="stylesheet" type="text/css" href="js/jquery.datetimepicker.css"/>
+
+
 <title>行動予定表</title>
 <script type="text/javascript">
 function blank_alert() {
@@ -48,7 +47,7 @@ function blank_alert() {
 			window.alert('キャンセルされました。'); // 警告ダイアログを表示
 			return false;
 // 			location.href = "Scheduleadd.jsp"; // Scheduleadd.jsp へジャンプ
-			document.getElementById("form").action = 'Scheduleadd.jsp'; // Scheduleadd.jsp へジャンプ
+// 			document.getElementById("form").action = 'Scheduleadd.jsp'; // Scheduleadd.jsp へジャンプ
 		}
 		// 「キャンセル」時の処理終了
 	}
@@ -76,7 +75,7 @@ function goServlet(){
 				<th>日付(終了時間)</th>
 				<th>社員番号</th>
 				<th>氏名</th>
-				<th>行先</th>
+				<th>行先(最寄駅、VSN拠点名)</th>
 				<th>内容</th>
 				<th>直行/直帰</th>
 				<th>ステータス</th>

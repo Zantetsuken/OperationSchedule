@@ -34,32 +34,32 @@ public class Autodelete {
 					//データベース削除
 					String sqldel = "delete from schedule where tacheck = '済' and delflg = '削除' and dateend <= '" + dateend.substring(0, 10) + "'";
 //					String sqldel = "delete from schedule where tacheck = '済' and delflg = '削除' and dateend <= '2015-04-22'";
-					System.out.println(sqldel);
+//					System.out.println(sqldel);
 					PreparedStatement pstmtdel = db.preopen(sqldel);
 					int result2 = pstmtdel.executeUpdate();
 				}
 			}
 
-			//Noを初期化したい
-			String sqla = "alter table schedule change no no int not null";
-			System.out.println(sqla);
-			//SQL実行
-			PreparedStatement pstmta = db.preopen(sqla);
-			int res = pstmta.executeUpdate();
-
+//			//Noを初期化したい
+//			String sqla = "alter table schedule change no no int not null";
+//			System.out.println(sqla);
+//			//SQL実行
+//			PreparedStatement pstmta = db.preopen(sqla);
+//			int res = pstmta.executeUpdate();
+//
 //			String sqlb = "alter table schedule pack_keys = 0 checksum = 0 delay_key_write =0 auto_increment = 1";
-			String sqlb = "alter table schedule auto_increment = 1";
-			System.out.println(sqlb);
-			//SQL実行
-			PreparedStatement pstmtb = db.preopen(sqlb);
-			int resa = pstmtb.executeUpdate();
-
+//			String sqlb = "alter table schedule auto_increment = 1";
+//			System.out.println(sqlb);
+//			//SQL実行
+//			PreparedStatement pstmtb = db.preopen(sqlb);
+//			int resa = pstmtb.executeUpdate();
+//
 //			String sqlc = "alter table schedule change no no int auto_increment";
-			String sqlc = "alter table schedule change no no int not null auto_increment";
-			System.out.println(sqlc);
-			//SQL実行
-			PreparedStatement pstmtc = db.preopen(sqlc);
-			int resb = pstmtc.executeUpdate();
+//			String sqlc = "alter table schedule change no no int not null auto_increment";
+//			System.out.println(sqlc);
+//			//SQL実行
+//			PreparedStatement pstmtc = db.preopen(sqlc);
+//			int resb = pstmtc.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

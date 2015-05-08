@@ -48,7 +48,7 @@
 			ses.setAttribute("lname", lname);
 	// 		out.println(fname + lname);
 			out.println("<h3>ログインしました。</h3>");
-			out.println("<input type='submit' class='button1' value='行動予定一覧'>");
+			out.println("<input type='submit' class='button1' value='行動予定一覧' autofocus>");
 		}else{
 			ses.setAttribute("login", "false");
 			out.println("<h3>ログインに失敗しました。</h3>");

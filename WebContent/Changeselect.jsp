@@ -30,7 +30,7 @@ function blank_alert() {
 	if(document.form.datestart.value=="" || document.form.dateend.value=="" || document.form.place.value==""){
 		alert("データを入力してください");
 		return false;
-		location.href = "Changeselect.jsp"; // Changeselect.jsp へジャンプ
+// 		location.href = "Changeselect.jsp"; // Changeselect.jsp へジャンプ
 	}else{
 		// 「OK」時の処理開始 ＋ 確認ダイアログの表示
 		if(window.confirm('登録しますか？')){
@@ -42,7 +42,7 @@ function blank_alert() {
 		else{
 			window.alert('キャンセルされました。'); // 警告ダイアログを表示
 			return false;
-			location.href = "Changeselect.jsp"; // Changeselect.jsp へジャンプ
+// 			location.href = "Changeselect.jsp"; // Changeselect.jsp へジャンプ
 // 			document.getElementById("form").action = 'Changeselect.jsp'; // Changeselect.jsp へジャンプ
 		}
 		// 「キャンセル」時の処理終了

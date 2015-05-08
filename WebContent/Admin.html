@@ -33,21 +33,17 @@ function blankandchk_alert() {
 	}
 	return true;
 }
+//半角英数字記号が入力されたかチェック
 function chk1() {
 	var str1 = $("input[name='fname']").val();
-
 	if(str1.match(/^[a-zA-Z0-9 -/:-@\[-\`\{-\~]+$/)) {
 		alert("半角英数字記号が入力されました。");
-// 		if(str1.match(/[ぁ-んァ-ヶー一-龠]+$/))
-// 		if(str1.match(/[、-◯]/)){
-// 			alert("全角記号が入力されました。");
-// 			return false;
-// 		}
 		return false;
 	} else {
 		return true;
 	}
 }
+//半角英数字記号が入力されたかチェック
 function chk2() {
 	var str2 = $("input[name='lname']").val();
 	if(str2.match(/^[a-zA-Z0-9 -/:-@\[-\`\{-\~]+$/)) {
@@ -60,20 +56,20 @@ function chk2() {
 function chk3() {
 	var str3 = $("input[name='fname']").val();
 	if(str3.match(/^[ぁ-んァ-ヶー一-龠 　\r\n\t]+$/)) {
-		alert("fname : OK。");
+// 		alert("fname : OK。");
 		return true;
 	} else {
-		alert("fname : NG。");
+// 		alert("fname : NG。");
 		return false;
 	}
 }
 function chk4() {
 	var str4 = $("input[name='lname']").val();
 	if(str4.match(/^[ぁ-んァ-ヶー一-龠 　\r\n\t]+$/)) {
-		alert("lname : OK。");
+// 		alert("lname : OK。");
 		return true;
 	} else {
-		alert("lname : NG。");
+// 		alert("lname : NG。");
 		return false;
 	}
 }
