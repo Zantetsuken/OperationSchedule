@@ -6,11 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/table.css" type="text/css" rel="stylesheet" />
 
-
-<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
-<link href="js/query-ui-timepicker-addon.css" rel="stylesheet" media="all" type="text/css"/>
-<script src="js/jquery-1.11.2.js"></script>
-<script src="js/jquery-ui.min.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="all" type="text/css" href="js/jquery-ui-timepicker-addon.css" />
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script src="js/jquery-ui-timepicker-addon.js"></script>
 <script src="js/jquery-ui-timepicker-ja.js"></script>
 <script src="js/jquery-ui-sliderAccess.js"></script>
@@ -24,7 +23,7 @@
 <!-- <script src="js/jquery-ui-sliderAccess.js"></script> -->
 <!-- Timepicker -->
 
-<link rel="stylesheet" type="text/css" href="js/jquery.datetimepicker.css"/>
+<!-- <link rel="stylesheet" type="text/css" href="js/jquery.datetimepicker.css"/> -->
 
 
 <title>行動予定表</title>

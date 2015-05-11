@@ -7,17 +7,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <link href="css/table.css" type="text/css" rel="stylesheet" />
-
-<!-- Timepicker -->
-<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="all" type="text/css" href="js/jquery-ui-timepicker-addon.css" />
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script src="js/jquery-ui-timepicker-addon.js"></script>
 <script src="js/jquery-ui-timepicker-ja.js"></script>
 <script src="js/jquery-ui-sliderAccess.js"></script>
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script> -->
+<!-- Timepicker -->
+<!-- <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script> -->
+<!-- <script src="js/jquery-ui-timepicker-addon.js"></script> -->
+<!-- <script src="js/jquery-ui-timepicker-ja.js"></script> -->
+<!-- <script src="js/jquery-ui-sliderAccess.js"></script> -->
 <!-- Timepicker -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
