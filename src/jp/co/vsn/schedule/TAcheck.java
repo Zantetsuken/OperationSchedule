@@ -50,9 +50,6 @@ public class TAcheck extends HttpServlet {
 				for(int i = 0; i < check.length; i++){
 					//個別チェック(チェックボックスにチェックを入れたレコードのみ対象)
 					String sql = "update schedule set tacheck ='済' where no ='" + check[i] + "'";
-					System.out.println(sql);
-					//データベースへのアクセス(一括チェック)
-//					String sql = "update schedule a, (select tacheck from schedule where tacheck = '未' ) b set a.tacheck ='済' where a.tacheck = b.tacheck";
 					//SQL実行
 					PreparedStatement pstmt = db.preopen(sql);
 					int result = pstmt.executeUpdate();

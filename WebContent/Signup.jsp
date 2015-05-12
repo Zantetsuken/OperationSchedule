@@ -16,7 +16,6 @@
 	request.setCharacterEncoding("UTF-8");
 	//パラメータ取得
 	String id = request.getParameter("id");
-// 	String name = request.getParameter("name");
 	String fname = request.getParameter("fname");
 	String lname = request.getParameter("lname");
 	String fullname = fname + "　" + lname;
@@ -43,16 +42,13 @@
 		if(flg){
 			ses.setAttribute("login", "true");
 			ses.setAttribute("id", id);
-	// 		ses.setAttribute("name", name);
 			ses.setAttribute("fname", fname);
 			ses.setAttribute("lname", lname);
-	// 		out.println(fname + lname);
-			out.println("<h3>ログインしました。</h3>");
+			out.println("<h3>ログインしました。</h3><br><br>");
 			out.println("<input type='submit' class='button1' value='行動予定一覧' autofocus>");
-
 		}else{
 			ses.setAttribute("login", "false");
-			out.println("<h3>ログインに失敗しました。</h3>");
+			out.println("<h3><font color='#ff0000'>ログインに失敗しました。</h3>");
 		}
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -65,8 +61,8 @@
 		}
 	}
 %>
-		<input type="button" class="button1" value="ユーザ名変更" onclick="location.href='Rename.jsp'">
 		<input type="button" class="button1" value="ログイン画面" onclick="location.href='Login.html'">
+		<input type="button" class="button1" value="ユーザ名変更" onclick="location.href='Rename.jsp'">
 	</form>
 </body>
 </html>

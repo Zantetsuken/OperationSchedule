@@ -10,9 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>行動予定表</title>
 <script type="text/javascript">
-// function goServlet(){
-// 	 document.getElementById("form").action = 'Schedule';
-// 	 }
 function disp(){
 	// 「OK」時の処理開始 ＋ 確認ダイアログの表示
 	if(window.confirm('削除しますか？')){

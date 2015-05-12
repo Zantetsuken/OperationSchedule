@@ -80,8 +80,6 @@ $(document).ready(function() {
 		{
 			int no = result.getInt("no");
 			String tacheck  = result.getString("tacheck");
-// 			String datestart = result.getString("datestart");
-// 			String dateend  = result.getString("dateend");
 
 			//日付(開始)
 			Timestamp datestart = result.getTimestamp("datestart");

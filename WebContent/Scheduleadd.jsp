@@ -13,19 +13,6 @@
 <script src="js/jquery-ui-timepicker-addon.js"></script>
 <script src="js/jquery-ui-timepicker-ja.js"></script>
 <script src="js/jquery-ui-sliderAccess.js"></script>
-
-<!-- Timepicker -->
-<!-- <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css"/> -->
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script> -->
-<!-- <script src="js/jquery-ui-timepicker-addon.js"></script> -->
-<!-- <script src="js/jquery-ui-timepicker-ja.js"></script> -->
-<!-- <script src="js/jquery-ui-sliderAccess.js"></script> -->
-<!-- Timepicker -->
-
-<!-- <link rel="stylesheet" type="text/css" href="js/jquery.datetimepicker.css"/> -->
-
-
 <title>行動予定表</title>
 <script type="text/javascript">
 function blank_alert() {
@@ -45,8 +32,6 @@ function blank_alert() {
 		else{
 			window.alert('キャンセルされました。'); // 警告ダイアログを表示
 			return false;
-// 			location.href = "Scheduleadd.jsp"; // Scheduleadd.jsp へジャンプ
-// 			document.getElementById("form").action = 'Scheduleadd.jsp'; // Scheduleadd.jsp へジャンプ
 		}
 		// 「キャンセル」時の処理終了
 	}

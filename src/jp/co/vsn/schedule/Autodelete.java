@@ -34,7 +34,6 @@ public class Autodelete {
 					//データベース削除
 					String sqldel = "delete from schedule where tacheck = '済' and delflg = '削除' and dateend <= '" + dateend.substring(0, 10) + "'";
 //					String sqldel = "delete from schedule where tacheck = '済' and delflg = '削除' and dateend <= '2015-04-22'";
-//					System.out.println(sqldel);
 					PreparedStatement pstmtdel = db.preopen(sqldel);
 					int result2 = pstmtdel.executeUpdate();
 				}

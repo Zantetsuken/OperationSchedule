@@ -42,7 +42,6 @@ public class Change extends HttpServlet {
 		String detail = request.getParameter("detail");
 		String riyu2 = null;
 		String[] riyu = request.getParameterValues("riyu");
-//		System.out.println("Change->riyu:" + riyu);
 
 		//直行直帰のnullチェック
 		if(riyu == null){
@@ -52,10 +51,8 @@ public class Change extends HttpServlet {
 			for(int i = 0; i < riyu.length; i++){
 				if(i == 1){
 					riyu2 = riyu[0] + riyu[1];
-//					System.out.println("i = 1:Change->riyu: " + riyu2);
 				}else{
 					riyu2 = riyu[0];
-//					System.out.println("i = 0:Change->riyu: " + riyu2);
 				}
 			}
 		}
@@ -67,7 +64,6 @@ public class Change extends HttpServlet {
 
 			String sql ="update schedule set tacheck ='未',datestart ='"+ datestart + "', dateend ='"+ dateend +"',place ='" + place + "',"
 				+ " detail ='"+ detail +"',riyu ='" + riyu2 + "',delflg ='変更'  where no = '" + no + "'";
-//	 		out.println(sql);
 			PreparedStatement pstmt = db.preopen(sql);
 			int res = pstmt.executeUpdate();
 			request.setAttribute("no", no);
@@ -91,5 +87,4 @@ public class Change extends HttpServlet {
 			}
 		}
 	}
-
 }

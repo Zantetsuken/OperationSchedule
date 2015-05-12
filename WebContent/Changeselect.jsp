@@ -48,8 +48,6 @@ function blank_alert() {
 		else{
 			window.alert('キャンセルされました。'); // 警告ダイアログを表示
 			return false;
-// 			location.href = "Changeselect.jsp"; // Changeselect.jsp へジャンプ
-// 			document.getElementById("form").action = 'Changeselect.jsp'; // Changeselect.jsp へジャンプ
 		}
 		// 「キャンセル」時の処理終了
 	}
@@ -64,7 +62,7 @@ function blank_alert() {
 	//パターン定義
 	final String DATE_PATTERN = "yyyy-MM-dd HH:mm";
 	final String detaillist[] = {"業務打合せ","事前打合せ","面談","資格試験","その他"};
-// 	int sesno = (int)request.getAttribute("no");
+
 	String idses = (String)session.getAttribute("id");
 	String rd = request.getParameter("choice");
 	//DBAccess のインスタンスを生成する
@@ -74,7 +72,7 @@ function blank_alert() {
 		//データベースへのアクセス
 		//SQL文
 		String sql = "select * from schedule where id = "+ idses + " and not delflg = '削除' limit "+ rd + ", 1";
-// 		System.out.println(idses+ ":" + rd);
+
 		//SQL実行
 		PreparedStatement pstmt = db.preopen(sql);
 		ResultSet result = pstmt.executeQuery();
@@ -85,7 +83,7 @@ function blank_alert() {
 
 		result.next();
 		int no = result.getInt("no");
-// 		System.out.println("selectchane:" + no);
+
 		String tacheck  = result.getString("tacheck");
 		//日付処理(開始)(本当はそのまま格納したい)
 		Timestamp datestart = result.getTimestamp("datestart");
@@ -101,14 +99,14 @@ function blank_alert() {
 		String name = result.getString("name");
 		String place = result.getString("place");
 		String detail = result.getString("detail");
-// 		System.out.println("内容:" + detail);
+
 		String riyu = result.getString("riyu");
 		String delflg = result.getString("delflg");
-// 		System.out.println("Changeselect:riyu" + riyu);
+
 		out.println("<tr align='center'><td>" + no + "</td>");
 		out.println("<td>" + tacheck + "</td>");
-		out.println("<td><input type='text' name='datestart' id='datepickerFrom' size='16' value='" + strstart[0] + " " + strstart[1] +"' /></td>");
-		out.println("<td><input type='text' name='dateend' id='datepickerTo' size='16' value='" + strend[0] + " " + strend[1] + "' /></td>");
+		out.println("<td><input type='text' name='datestart' id='datepickerFrom'  value='" + strstart[0] + " " + strstart[1] +"' /></td>");
+		out.println("<td><input type='text' name='dateend' id='datepickerTo'  value='" + strend[0] + " " + strend[1] + "' /></td>");
 		out.println("<td>" + id + "</td>");
 		out.println("<td>" + name + "</td>");
 		out.println("<td><input type='text' name='place' maxlength='20' required autocomplete value='" + place + "'></td>");
@@ -123,7 +121,7 @@ function blank_alert() {
 		}
 
 		out.println("</select></td>");
-// 		out.println(riyu);
+
 		//直行直帰
 		if(riyu.equals("直行")){
 			out.println("<td><input type='checkbox' name='riyu' value='直行' checked='checked'>直行");
@@ -143,7 +141,7 @@ function blank_alert() {
 		request.setAttribute("tacheck", tacheck);
 		session.setAttribute("no",no);
 		session.setAttribute("name",name);
-// 		System.out.println("直行直帰:" + riyu);
+
 		session.setAttribute("riyu",riyu);
 	} catch (SQLException e) {
 		e.printStackTrace();

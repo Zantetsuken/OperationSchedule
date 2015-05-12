@@ -50,11 +50,9 @@ public class Insert extends HttpServlet {
 				if(i == 1){
 					//直行or直帰
 					riyu2 = riyu[0] + riyu[1];
-//					System.out.println(riyu2);
 				}else{
 					//直行直帰
 					riyu2 = riyu[0];
-//					System.out.println(riyu2);
 				}
 			}
 		}

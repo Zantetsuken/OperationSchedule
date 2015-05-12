@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import jp.co.vsn.dbaccess.DBAccess;
 /**
- * Servlet implementation class Insert
+ * Servlet implementation class Rename
  */
 @WebServlet("/Rename")
 public class Rename extends HttpServlet {
@@ -33,21 +33,23 @@ public class Rename extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
-		String fname = (String)session.getAttribute("fname");
-		String lname = (String)session.getAttribute("lname");
+		String fname = (String)request.getParameter("fname");
+		String lname = (String)request.getParameter("lname");
 		String fullname = fname + "　" + lname;
 		//MyDBAccessのインスタンスを生成する
 		DBAccess db = new DBAccess();
 
 		try{
+
 			//データベースへのアクセス
-			String sqlinsert = "update user set id = '"+ id + "',name ='"+ fullname +"'";
+			String sqlinsert = "update user set name ='"+ fullname +"' where id = '"+ id +"'";
 			PreparedStatement pstmtinsert = db.preopen(sqlinsert);
 			int res = pstmtinsert.executeUpdate();
 
+			request.setAttribute("id", id);
+			request.setAttribute("fullname", fullname);
 			//遷移先jsp
-			request.getRequestDispatcher("Update.jsp").forward(request, response);
-
+			request.getRequestDispatcher("Renameresult.jsp").forward(request, response);
 		} catch (Exception e) {
 			throw new ServletException(e);
 		} finally {

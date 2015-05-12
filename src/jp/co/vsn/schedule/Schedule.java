@@ -55,11 +55,10 @@ public class Schedule extends HttpServlet {
 			Date now = new Date();
 			java.text.DateFormat date = new java.text.SimpleDateFormat("yyyy-MM-dd kk:mm");
 			dateend = date.format(now);
-//			System.out.println(dateend);
 			Autodelete delete = new Autodelete();
 			delete.Autodeletedatabase(dateend);
 			//遷移先jsp
-//			request.getRequestDispatcher("Schedule.jsp").forward(request, response);
+
 			RequestDispatcher rd = request.getRequestDispatcher("Schedule.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {

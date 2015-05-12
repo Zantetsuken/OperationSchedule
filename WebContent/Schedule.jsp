@@ -1,5 +1,4 @@
-<%@page import="jp.co.vsn.schedule.Employeedao"%>
-<%@page import="jp.co.vsn.schedule.Employee"%>
+<%@page import="jp.co.vsn.schedule.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import=" java.util.List"%>
 <jsp:include page="Checklogin.jsp" />
