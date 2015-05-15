@@ -78,7 +78,7 @@ function check(){
 
 		out.println("<table align='center'>");
 		out.println("<tr align='center'><th>No</th><th>TAチェック</th><th>日付(開始時間)</th><th>日付(終了時間)</th><th>社員番号</th>"
-					+"<th>氏名</th><th>行先</th><th>内容</th><th>直行/直帰</th><th>ステータス</th></tr>");
+					+"<th>氏名</th><th>行先(最寄駅、VSN拠点名)</th><th>内容</th><th>直行/直帰</th><th>ステータス</th></tr>");
 
 		result.next();
 		int no = result.getInt("no");

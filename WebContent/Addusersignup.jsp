@@ -65,7 +65,7 @@
 	}
 %>
 		<input type="button" class="button1" value="ログイン画面" onclick="location.href='Login.html'">
-		<input type="button" class="button1" value="ユーザ追加"   onclick="location.href='Admin.html'">
+		<input type="button" class="button1" value="ユーザ登録"   onclick="location.href='Admin.html'">
 	</form>
 </body>
 </html>

@@ -29,27 +29,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>行動予定表</title>
 <script type="text/javascript">
-function goServletSchedule(){
-	 document.getElementById("form").action = 'Schedule.jsp';
-}
+// function goServletSchedule(){
+// 	 document.getElementById("form").action = 'Schedule.jsp';
+// }
 function blank_alert() {
-	if(document.form.datestart.value=="" || document.form.dateend.value=="" || document.form.place.value==""){
-		alert("データを入力してください");
+	if(document.form.place.value==""){
+		alert("行先を入力してください");
 		return false;
-// 		location.href = "Changeselect.jsp"; // Changeselect.jsp へジャンプ
 	}else{
-		// 「OK」時の処理開始 ＋ 確認ダイアログの表示
 		if(window.confirm('登録しますか？')){
 			document.getElementById("form").action = 'Change'; // Change.jsp へジャンプ
 			return true;
-		}
-		// 「OK」時の処理終了
-		// 「キャンセル」時の処理開始
-		else{
+		}else{
 			window.alert('キャンセルされました。'); // 警告ダイアログを表示
 			return false;
 		}
-		// 「キャンセル」時の処理終了
 	}
 }
 </script>
@@ -79,7 +73,7 @@ function blank_alert() {
 
 		out.println("<table align='center'>");
 		out.println("<tr align='center'><th>No</th><th>TAチェック</th><th>日付(開始時間)</th><th>日付(終了時間)</th><th>社員番号</th>"
-					+"<th>氏名</th><th>行先</th><th>内容</th><th>直行/直帰</th><th>ステータス</th></tr>");
+					+"<th>氏名</th><th>行先(最寄駅、VSN拠点名)</th><th>内容</th><th>直行/直帰</th><th>ステータス</th></tr>");
 
 		result.next();
 		int no = result.getInt("no");
@@ -105,8 +99,8 @@ function blank_alert() {
 
 		out.println("<tr align='center'><td>" + no + "</td>");
 		out.println("<td>" + tacheck + "</td>");
-		out.println("<td><input type='text' name='datestart' id='datepickerFrom'  value='" + strstart[0] + " " + strstart[1] +"' /></td>");
-		out.println("<td><input type='text' name='dateend' id='datepickerTo'  value='" + strend[0] + " " + strend[1] + "' /></td>");
+		out.println("<td><input type='text' name='datestart' id='datepickerFrom'  value='" + strstart[0] + " " + strstart[1] +"' readonly/></td>");
+		out.println("<td><input type='text' name='dateend' id='datepickerTo'  value='" + strend[0] + " " + strend[1] + "' readonly/></td>");
 		out.println("<td>" + id + "</td>");
 		out.println("<td>" + name + "</td>");
 		out.println("<td><input type='text' name='place' maxlength='20' required autocomplete value='" + place + "'></td>");
